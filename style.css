@@ -16,6 +16,8 @@
     color: var(--mediumGray);
 }
 
+/* Navbar Start */
+
 .navbar-wrapper .navbar-container {
     display: flex;
     align-items: center;
@@ -51,12 +53,23 @@
     background-color: transparent;
     border: none;
     padding: 10px;
+    cursor: pointer;
+    transition: ease 0.5s;
+}
+
+.navbar-wrapper .navbar-container .navbar-links button:hover {
+    color: var(--almostBlack);
 }
 
 .navbar-wrapper .navbar-container .navbar-links a {
     font-size: 13px;
     font-weight: 500;
     padding: 10px;
+    transition: ease 0.5s;
+}
+
+.navbar-wrapper .navbar-container .navbar-links a:hover {
+    color: var(--almostBlack);
 }
 
 .navbar-wrapper .navbar-container .navbar-button {
@@ -66,13 +79,23 @@
 
 .navbar-wrapper .navbar-container .navbar-button a {
     font-size: 13px;
+    font-weight: 500;
     padding: 10px 18px;
+    transition: ease 0.5s;
+}
 
+.navbar-wrapper .navbar-container .navbar-button a:hover {
+    color: var(--almostBlack);
 }
 
 .navbar-wrapper .navbar-container .navbar-button .registerButton {
     border: 1px solid var(--mediumGray);
     border-radius: 10px;
+    transition: ease 0.5s;
+}
+
+.navbar-wrapper .navbar-container .navbar-button .registerButton:hover {
+    border: 1px solid var(--almostBlack);
 }
 
 .navbar-wrapper .navbar-container .navbar-items .navbar-links .button-wrapper-1 {
@@ -80,6 +103,14 @@
     flex-direction: column;
     align-items: end;
     gap: 2rem;
+}
+
+.navbar-wrapper .navbar-container .navbar-items .navbar-links .button-wrapper-1 .Features-dropdown svg {
+    transition: ease 0.5s;
+}
+
+.navbar-wrapper .navbar-container .navbar-items .navbar-links .button-wrapper-1 .Features-dropdown.active svg {
+    transform: rotate(-180deg)
 }
 
 .navbar-wrapper .navbar-container .navbar-items .navbar-links .button-wrapper-1 .dropdown-menu {
@@ -90,14 +121,18 @@
     flex-direction: column;
     gap: 0.5rem;
     top: 60px;
-    padding: 15px 10px;
+    padding: 15px 20px;
     visibility: hidden;
     opacity: 0;
+    animation-name: fadeOut;
+    animation-duration: 0.5s;
 }
 
 .navbar-wrapper .navbar-container .navbar-items .navbar-links .button-wrapper-1 .dropdown-menu.active {
     visibility: visible;
     opacity: 1;
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
 }
 
 .navbar-wrapper .navbar-container .navbar-items .navbar-links .button-wrapper-1 .dropdown-menu .dropdown-items {
@@ -119,6 +154,14 @@
     gap: 2rem;
 }
 
+.navbar-wrapper .navbar-container .navbar-items .navbar-links .button-wrapper-2 .company-dropdown svg {
+    transition: ease 0.5s;
+}
+
+.navbar-wrapper .navbar-container .navbar-items .navbar-links .button-wrapper-2 .company-dropdown.active svg {
+    transform: rotate(-180deg)
+}
+
 .navbar-wrapper .navbar-container .navbar-items .navbar-links .button-wrapper-2 .dropdown-menu-1 {
     border-radius: 8px;
     box-shadow: 0px 0px 15px var(--mediumGray);
@@ -130,11 +173,15 @@
     padding: 15px 25px;
     visibility: hidden;
     opacity: 0;
+    animation-name: fadeOut;
+    animation-duration: 0.5s;
 }
 
 .navbar-wrapper .navbar-container .navbar-items .navbar-links .button-wrapper-2 .dropdown-menu-1.active {
     visibility: visible;
     opacity: 1;
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
 }
 
 /* Hero Section */
@@ -157,12 +204,14 @@
 .hero-container .main-content h1 {
     font-size: 5rem;
     color: var(--almostBlack);
+    cursor: default;
 }
 
 .hero-container .main-content p {
     font-size: 15px;
     font-weight: 500;
     line-height: 1.5rem;
+    cursor: default;
 }
 
 .hero-container .main-content a {
@@ -170,8 +219,17 @@
     font-weight: 500;
     border-radius: 15px;
     background-color: var(--almostBlack);
+    border: 1px solid var(--almostBlack);
     color: var(--almostWhite);
     padding: 15px 25px;
+    font-weight: 700;
+    transition: ease 0.5s;
+}
+
+.hero-container .main-content a:hover {
+    color: var(--almostBlack);
+    background-color: var(--almostWhite);
+    border: 1px solid var(--almostBlack);
 }
 
 .hero-container .main-content .logo-container {
@@ -187,3 +245,13 @@
     object-fit: contain;
 }
 
+/* Animation */
+@keyframes fadeIn {
+    from {top: 40px; opacity: 0;}
+    to {top: 60px; opacity: 1;}
+}
+
+@keyframes fadeOut {
+    from {top: 60px; opacity: 1;}
+    to {top: 40px; opacity: 0;}
+}
